@@ -1,26 +1,38 @@
 import "../styles.css";
-import  { data, Result } from "./data";
+import { Result } from "../data";
 
 interface ISearchProps {
-    onSearch: (handleSearch: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
-    results: Result[];
+  onSearch: (
+    handleSearch: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => void;
+  results: Result[];
 }
 
-export default function Search({
-    onSearch,
-    results = [],
-}: ISearchProps) {
+interface IResultCardProps {
+  data: Result;
+}
+
+function ResultCard({ data }: IResultCardProps) {
+  return (
+    <li className="ResultCard">
+      <div className="name">
+        {data.name} <span>${data.side} FODMAP</span>
+      </div>
+      <div className="category">{data.cat}</div>
+    </li>
+  );
+}
+
+export default function Search({ onSearch, results = [] }: ISearchProps) {
   return (
     <div className="Search">
-        <h2>Can I Have?</h2>
+      <h2>What can I have?</h2>
       <input type="text" onChange={(event) => onSearch(event)} />
-      <div className="results" style={{
-        '--results-visibility': results.length ? 'visible' : 'hidden',
-      }}>
+      <ul className="results">
         {results.map((item) => (
-          <div key={item.name}>{item.name}</div>
+          <ResultCard key={item.name} data={item} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

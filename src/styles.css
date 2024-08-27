@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -5,9 +10,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: var(--bg-color);
-  color: white;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -19,4 +26,30 @@ input {
   text-align: center;
   color: darkslategray;
   background-color: white;
+}
+
+ul.results {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+ul.results li {
+  list-style: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+ul.results li .category {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+ul.results li .name {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
