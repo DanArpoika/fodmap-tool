@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./output.css";
 import Search from "./components/Search";
 import { useRef, useState } from "react";
 import { data, Result } from "./data";
@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="font-sans text-center flex flex-col items-center justify-center min-h-screen bg-gray-200 text-gray-700 m-0 p-0">
       <Search onSearch={handleSearch} results={results} />
     </div>
   );
