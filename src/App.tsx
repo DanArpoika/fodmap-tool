@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div className="font-sans text-center min-h-screen bg-gray-200 text-gray-700 m-0 py-10 px-20">
+    <div className="font-sans text-center min-h-screen bg-gray-200 text-gray-700 m-0 py-10 px-4 sm:px-14 large:px-20">
       <Search onSearch={handleSearch} results={results} />
     </div>
   );

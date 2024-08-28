@@ -36,7 +36,7 @@ export default function Search({ onSearch, results = [] }: ISearchProps) {
         className="bg-white rounded-md text-dark text-center p-2 w-full max-w-[300px]"
         onChange={(event) => onSearch(event)}
       />
-      <ul className="results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 pl-0 pt-10">
+      <ul className="results grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 pl-0 pt-10">
         {results.map((item) => (
           <ResultCard key={item.name} data={item} />
         ))}
