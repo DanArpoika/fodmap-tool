@@ -1,11 +1,11 @@
-import "./output.css";
-import Search from "./components/Search";
-import { useRef, useState } from "react";
-import { data, Result } from "./data";
+import './output.css';
+import Search from './components/Search';
+import { useRef, useState } from 'react';
+import { data, Result } from './data';
 
 export default function App() {
   const [results, setResults] = useState<Result[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const handleSearch = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div className="font-sans text-center flex flex-col items-center justify-center min-h-screen bg-gray-200 text-gray-700 m-0 p-0">
+    <div className="font-sans text-center min-h-screen bg-gray-200 text-gray-700 m-0 py-10 px-4">
       <Search onSearch={handleSearch} results={results} />
     </div>
   );
